@@ -4,25 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tomas Sable</title>
-  <meta name="description" content="Refinement in progress." />
+  <meta name="description" content="Refinement in progress..." />
+
+  <!-- Montserrat from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
-    body {
+    :root { color-scheme: dark; }
+
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      height: 100%;
       background: #000;
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .wrap {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Headline: eye-level, slightly above center */
+    .headline {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      font-weight: 500; /* Montserrat Medium */
+      letter-spacing: 0.06em;
+      font-size: clamp(28px, 4.2vw, 56px);
+      line-height: 1.15;
       text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Subline: smaller, shifted to the right (middle of right third) */
+    .subline {
+      position: absolute;
+      top: calc(42% + 58px);
+      left: 66%;
+      transform: translate(-50%, 0);
+      text-transform: uppercase;
+      font-weight: 300; /* Montserrat Light */
+      letter-spacing: 0.12em;
+      font-size: clamp(12px, 1.3vw, 16px);
+      line-height: 1.2;
+      white-space: nowrap;
+      opacity: 0.95;
+    }
+
+    /* Signature: bottom center, smaller than subline */
+    .signature {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-transform: uppercase;
+      font-weight: 400; /* Montserrat Regular */
+      letter-spacing: 0.22em;
+      font-size: clamp(10px, 1.05vw, 13px);
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 520px) {
+      .headline { top: 40%; white-space: normal; padding: 0 18px; }
+      .subline {
+        top: calc(40% + 56px);
+        left: 68%;
+      }
+      .signature { bottom: 28px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- PASTE YOUR CONTENT HERE -->
-
+  <div class="wrap">
+    <div class="headline">Refinement in progress...</div>
+    <div class="subline">...elevating soon</div>
+    <div class="signature">Tomas Sable</div>
+  </div>
 </body>
 </html>
